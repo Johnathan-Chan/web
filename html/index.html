@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable="no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts-en.common.js"></script>
+    <link type="text/css" rel="styleSheet"  href="../static/css/index.css" />
+</head>
+
+<body>
+    <div id="head" class="layout">
+        <button class="rbg"><a>MICRO-BLOG</a></button class="rbg">
+        <div class="head-box">
+            <button><a>NBA COM/CHINA</a></button>
+            <button><a>ENGLISH</a></button>
+            <button class="bbg"><a href="./login.html">COMMUNITY</a></button>
+        </div>
+    </div>
+    <div id="head2" class="layout">
+        <div class="logo-box2 layout">
+            <img class="logo" src="../static/img/nba_logo.png">
+            <span class="logo-info fontType">NBA</span>
+        </div>
+    </div>
+    <div id="top">
+        <div class="logo-box layout">
+            <img class="logo" src="../static/img/nba_logo.png">
+            <span class="logo-info fontType">NBA</span>
+        </div>
+        <div class="nav-info layout fontType">
+            <a href="">RACE</a>
+            <a href="">TEAM</a>
+            <a href="./lengend.html">LENGENDS</a>
+            <a href="">NEWS</a>
+            <a href="">VIDEO</a>
+            <a href="">STATISTICS</a>
+        </div>
+    </div>
+    <div class="img-scroll">
+        <ul id="scroll">
+            <li><img src="../static/img/2.jpg"></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var index = 0;
+        function scroll() {
+            index++;
+            if (index >= 3) {
+                index = index % 3;
+            }
+            var imgs = ["2", "3", "4"]
+            var img = document.getElementById("scroll");
+            var li = img.getElementsByTagName("li")[0];
+            var img = li.getElementsByTagName("img")[0];
+            img.src = "../static/img/" + imgs[index] + ".jpg";
+        }
+        setInterval("scroll()", "3000");
+    </script>
+    <div class="box layout">
+        <div class="button-model">
+            <button><a href="" class="fontcolor">Events&nbsp;&nbsp;&nbsp;<span>(the wonderful
+                        events)</span></a></button>
+            <button class="bghover"><a href="">Nash retired</a></button>
+            <button class="bghover"><a href="./lengend.html">NBA Lengends</a></button>
+            <button class="bghover"><a href="">Warriors</a></button>
+            <button class="bghover"><a href="">Lakers</a></button>
+        </div>
+        <div class="news layout">
+            <img src="../static/img/timg.jpg">
+            <div class="news-top">
+                <div class="content">
+                    <h3 class="fontType">Warriors VS Cavaliers</h3>
+                    <p>The Warriors team played very easily in this game. After the game,
+                        This game was played in the afternoon
+                        of US time. Generally, After the next game, it will be dark, but the game quickly
+                        opened because of the score, which also made
+                        the whole game go very fast.</p>
+                </div>
+                <button>more ></button>
+            </div>
+        </div>
+    </div>
+    <div class="box2">
+        <div class="box3"></div>
+        <div class="box4">
+            <div class="icon layout">
+                <img src="../static/img/paper.ico">
+            </div>
+            <p class="fontstyle">KOBE BRYANT IS RETIRING</p>
+            <p class="fontstyle2">The journey of dreaming is hard and beautiful</p>
+            <p class="fontstyle2">and the power of dreams is also huge</p>
+            <button>GET INFO</button>
+        </div>
+    </div>
+    <div class="box5 layout">
+        <div class="logo2 layout">
+            <h1>NBA LENGENDS</h1>
+            <img src="../static/img/bottom.PNG">
+        </div>
+        <p>NBA ALL TEAM LIST OF PLAYERS</p>
+        <ul class="layout">
+            <li>
+                <div class="player">
+                    <img src="../static/img/curry.jpg">
+                    <div class="playername">
+                        <h3>CURRY</h3>
+                        <p>FORWARD / Golden State Warriors</p>
+                    </div>
+                </div>
+                <div class="playerinfo">
+                    <p>Akron, Ohio date of birth: March 14, 1988 graduate school
+                        2010 NBA All-Rookie Lineup First-team position: Point guard
+                    </p>
+                </div>
+                <a href="">Learn more</a>
+            </li>
+            <li>
+                <div class="player">
+                    <img src="../static/img/hadeng.jpg">
+                    <div class="playername">
+                        <h3>HADDEN</h3>
+                        <p>FORWARD / Houston Rockets</p>
+                    </div>
+                </div>
+                <div class="playerinfo">
+                    <p>He was selected to the second team of the rookie of the year in his rookie season,five
+                        times and the all-star team seven times</p>
+                </div>
+                <a href="">Learn more</a>
+            </li>
+            <li>
+                <div class="player">
+                    <img src="../static/img/poal.jpg">
+                    <div class="playername">
+                        <h3>PUAL</h3>
+                        <p>FORWARD / Los Angeles Clippers</p>
+                    </div>
+                </div>
+                <div class="playerinfo">
+                    <p>He was selected as the NBA Rookie of the Year in his rookie season,4 times in the NBA assists and
+                        7 times in the NBA All-Defensive Team</p>
+                </div>
+                <a href="">Learn more</a>
+            </li>
+        </ul>
+    </div>
+    <div class="box6 layout">
+        <div id="main" style="width: 40%;height:100%;"></div>
+        <div class="info">
+            <h1>Session Data</h1>
+            <p>The warriors ranking unchanged, beyond the eagle knight ranked second, Eage fell to third;
+                the Grizzies, the Spurs and the Clippers rose beyond the eagle knight ranking unchanged.</p>
+            <button>Learn more</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+
+        option = {
+            series: [
+                {
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: 'black',
+                                fontSize: "15",
+                            }
+                        },
+                        emphasis: {
+                            show: true
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            length: 20,
+                            lineStyle: {
+                                color: "black"
+                            }
+                        },
+                    },
+                    color: ['#2FCBCC', '#57D9D9', '#87DFDE', '#AEEBEC'],
+                    data: [
+                        { value: 20, name: 'Points 20%' },
+                        { value: 20, name: 'Backboard 20%' },
+                        { value: 20, name: 'Assists 20%' },
+                        { value: 40, name: 'Free throw 40%' },
+                    ]
+                }
+            ]
+        };
+        myChart.setOption(option); 
+    </script>
+    <div class="box7 layout">
+        <div class="logo2 layout">
+            <h1>OUR TEAM</h1>
+            <img src="../static/img/bottom.PNG">
+        </div>
+        <ul class="layout">
+            <li>
+                <img src="../static/img/Rockets.png">
+            </li>
+            <li>
+                <img src="../static/img/Spurs.png">
+            </li>
+            <li>
+                <img src="../static/img/Grizzlies.png">
+            </li>
+            <li>
+                <img src="../static/img/Heat.png">
+            </li>
+        </ul>
+    </div>
+    <div class="box8 layout">
+        <div class="logo2 layout">
+            <h1>CONTACT US</h1>
+            <img src="../static/img/bottom2.PNG">
+        </div>
+        <p>NBA has 10000 official NBAfan communtity of fans</p>
+        <div class="search">
+            <input type="text" placeholder="Your email address">
+            <button>SIGN-UP</button>
+        </div>
+    </div>
+    <div class="footer layout">
+        <div><img src="../static/img/Twitter.ico"></div>
+        <div><img src="../static/img/Facebook.ico"></div>
+        <div><img src="../static/img/instagram.ico"></div>
+        <div><img src="../static/img/Google.ico"></div>
+    </div>
+</body>
+
+</html>

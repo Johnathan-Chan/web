@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="styleSheet" href="../static/css/index.css" />
+    <link type="text/css" rel="styleSheet" href="../static/css/login.css" />
+    <title>login</title>
+</head>
+
+
+<body>
+    <div id="head" class="layout">
+        <button class="rbg"><a>MICRO-BLOG</a></button class="rbg">
+        <div class="head-box">
+            <button><a>NBA COM/CHINA</a></button>
+            <button><a>ENGLISH</a></button>
+            <button class="bbg"><a href="./login.html">COMMUNITY</a></button>
+        </div>
+    </div>
+    <div id="head2" class="layout">
+        <div class="logo-box2 layout">
+            <img class="logo" src="../static/img/nba_logo.png">
+            <span class="logo-info fontType">NBA</span>
+        </div>
+    </div>
+    <div id="top">
+        <div class="logo-box layout">
+            <img class="logo" src="../static/img/nba_logo.png">
+            <span class="logo-info fontType">NBA</span>
+        </div>
+        <div class="nav-info layout fontType">
+            <a href="">RACE</a>
+            <a href="">TEAM</a>
+            <a href="./lengend.html">LENGENDS</a>
+            <a href="">NEWS</a>
+            <a href="">VIDEO</a>
+            <a href="">STATISTICS</a>
+        </div>
+    </div>
+
+    <div class="img-box layout">
+        <div class="form-box">
+            <form class="form2" action="" onsubmit="return ResgisterValidation()">
+                <div class="formtype layout">
+                    <h2>NBA COMMUNITY</h2>
+                    <h3>RESGISTER</h3>
+                    <input type="text" name="email" autocomplete="off" placeholder="Your email">
+                    <input type="text" name="username" autocomplete="off" id="" placeholder="username">
+                    <input type="password" autocomplete="off" placeholder="password">
+                    <input type="password" autocomplete="off" placeholder="again password">
+                    <div class="button-group layout">
+                        <button type="button" id="go" onclick="movback()"><<&nbsp&nbsp&nbspSINGN-UP</button>
+                        <button type="submit" id="out">SIGN-IN</button>
+                    </div>
+                </div>
+            </form>
+            <form class="form1" action="">
+                <div class="formtype layout">
+                    <h2>NBA COMMUNITY</h2>
+                    <h3>LOGIN</h3>
+                    <input type="text" autocomplete="off" name="username" id="" placeholder="username">
+                    <input type="password" autocomplete="off" placeholder="password">
+                    <div class="button-group layout">
+                        <button id="back">SINGN-UP</button>
+                        <button type="button" id="in" onclick="mov()">SIGN-IN &nbsp&nbsp&nbsp>></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        var form1 = document.getElementsByTagName("form")[1];
+        var formbox = document.getElementsByClassName("form-box")[0];
+
+        function mov() {
+            form1.className = 'changeform1';
+            formbox.className = 'changeStyle';
+            setTimeout('showhidden()',1500);
+        }
+
+        function showhidden(){
+            form1.className = 'showhidden';
+        };
+        
+        function movback() {
+            form1.className = 'changeform2';
+            formbox.className = 'changeStyleback';
+        }
+
+        function ResgisterValidation(){
+            var password = document.getElementsByTagName("input")[2];
+            var apassword = document.getElementsByTagName("input")[3];
+            if(password.value != apassword.value){
+                console.log(password.value);
+                console.log(apassword.value);
+                alert("两次密码不同！！ 请重新输入");
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

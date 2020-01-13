@@ -1,0 +1,169 @@
+.img-box {
+    width: 100%;
+    height: 80vh;
+    background-image: url(../img/login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.form-box {
+    min-width: 400px;
+    height: 70vh;
+    position: relative;
+    box-shadow: 0px 3px 20px black;
+    transition: box-shadow 1s ease;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+}
+
+.formtype {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: aqua;
+}
+
+.formtype::before,
+.formtype::after{
+    content: '';
+    display: block;
+}
+
+h2,
+h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input {
+    width: 60%;
+    height: 6%;
+    outline: none;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: solid 2px aqua;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    padding-left: 5px;
+    color: aqua;
+}
+
+input::placeholder {
+    color: aqua;
+}
+
+.button-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-group::after,
+.button-group::before{
+    content: '';
+    display: block;
+}
+
+.button-group button {
+    background-color: #EA6E61;
+    color: white;
+    transition: background-color 0.5s linear, box-shadow 0.5s ease;
+    box-shadow: 0px 3px 5px black;
+}
+
+.button-group button:hover {
+    background-color: aqua;
+    box-shadow: 0px 3px 10px black;
+}
+
+.changeStyle {
+    animation: move 1.5s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move {
+    0% {
+        transform: rotateY(0deg);
+        min-width: 400px;
+        height: 70vh;
+    }
+
+    100% {
+        min-width: 400px;
+        height: 70vh;
+        transform: rotateY(540deg);
+        box-shadow: 0px 3px 20px black;
+    }
+}
+
+.changeStyleback {
+    animation: moveback 1.5s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveback {
+    0% {
+        transform: rotateY(540deg);
+        min-width: 400px;
+        height: 70vh;
+    }
+
+    100% {
+        min-width: 400px;
+        height: 70vh;
+        transform: rotateY(0deg);
+        box-shadow: 0px 3px 20px black;
+    }
+}
+
+.changeform1 {
+    animation: unshow 1.5s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes unshow {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.changeform2 {
+    animation: unshowback 1.5s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes unshowback {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.showhidden {
+    display: none;
+}
+
+.form2 {
+    transform: rotateY(180deg);
+    background-image: url(../img/obg.jpg);
+}
